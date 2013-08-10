@@ -1,6 +1,6 @@
 package br.org.top5.service;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +29,7 @@ public class MoviesServiceTest {
 		Mockito.when(movies.movies()).thenReturn(new ArrayList<Movie>());
 		MoviesService moviesService = new MoviesServiceImpl(movies);		
 		List<Movie> moviesList = moviesService.moviesList();		
+		Mockito.verify(movies, Mockito.atLeastOnce()).movies();
 		assertNotNull(moviesList);
 	}
 

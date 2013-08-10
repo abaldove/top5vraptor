@@ -5,7 +5,6 @@ import static org.junit.Assert.assertNotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.ejb.criteria.expression.SearchedCaseExpression.WhenClause;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -14,7 +13,6 @@ import org.mockito.MockitoAnnotations;
 
 import br.org.top5.model.Movie;
 import br.org.top5.service.MoviesService;
-import br.org.top5.service.MoviesServiceImpl;
 
 public class MoviesControllerTest {
 
@@ -32,6 +30,7 @@ public class MoviesControllerTest {
 		MoviesController moviesController = new MoviesController(moviesService);
 		List<Movie> movies = moviesController.movies();
 		assertNotNull(movies);
+		Mockito.verify(moviesService, Mockito.atLeastOnce()).moviesList();
 	}
 
 }
