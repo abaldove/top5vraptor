@@ -2,26 +2,28 @@ package br.org.top5.model;
 
 import static javax.persistence.TemporalType.DATE;
 
-import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
+import javax.persistence.Transient;
 
+import lombok.Data;
+
+@Data
 @Entity
 @Table(name = "MOVIE")
-public class Movie implements Serializable {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -5924441323075777616L;
+public class Movie {
 
 	@Id
 	@Column(name = "id_movie")
@@ -43,53 +45,11 @@ public class Movie implements Serializable {
 
 	@Column
 	private String posterName;
+	
+	@Transient
+	private String imdbRating;
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getSinopse() {
-		return sinopse;
-	}
-
-	public void setSinopse(String sinopse) {
-		this.sinopse = sinopse;
-	}
-
-	public Date getReleaseDate() {
-		return releaseDate;
-	}
-
-	public void setReleaseDate(Date releaseDate) {
-		this.releaseDate = releaseDate;
-	}
-
-	public String getImdbId() {
-		return imdbId;
-	}
-
-	public void setImdbId(String imdbId) {
-		this.imdbId = imdbId;
-	}
-
-	public String getPosterName() {
-		return posterName;
-	}
-
-	public void setPosterName(String posterName) {
-		this.posterName = posterName;
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "movie")
+	private List<Vote> votes;
 
 }

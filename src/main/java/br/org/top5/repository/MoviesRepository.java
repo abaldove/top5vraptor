@@ -18,8 +18,7 @@ public class MoviesRepository implements Movies {
 
 	@SuppressWarnings("unchecked")
 	public List<Movie> movies() {
-		Query query = entityManager.createQuery("from "
-				+ this.getClass().getName());
+		Query query = entityManager.createQuery("Select DISTINCT m from Movie m left join fetch m.votes");
 		List<Movie> resultList = query.getResultList();
 		return resultList;
 	}

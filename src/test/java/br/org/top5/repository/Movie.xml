@@ -1,4 +1,0 @@
-<dataset>
-	<Movie id_movie="1" name="Super Man" sinopse="Filme ruim" releaseDate="2011-08-25" imdbid="123456" postername="super.jpg"/>
-	<Movie id_movie="2" name="Wolverine" sinopse="Filme novo" releaseDate="2011-08-30" imdbid="789545" postername="wolverine.jpg"/>
-</dataset>

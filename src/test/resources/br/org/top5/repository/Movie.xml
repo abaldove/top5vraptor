@@ -1,0 +1,9 @@
+<dataset>
+	<Movie id_movie="1" name="Super Man" sinopse="Filme ruim" releaseDate="2011-08-25" imdbid="123456" postername="super.jpg"/>
+	<Movie id_movie="2" name="Wolverine" sinopse="Filme novo" releaseDate="2011-08-30" imdbid="789545" postername="wolverine.jpg"/>
+	<Vote id_vote="1" voteDate="2013-04-05" id_movie="1"/>
+	<Vote id_vote="2" voteDate="2013-04-06" id_movie="1"/>
+	<Vote id_vote="3" voteDate="2013-04-06" id_movie="1"/>
+	<Vote id_vote="4" voteDate="2013-04-06" id_movie="2"/>
+	<Vote id_vote="5" voteDate="2013-04-06" id_movie="2"/>
+</dataset>

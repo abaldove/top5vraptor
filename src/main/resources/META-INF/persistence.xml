@@ -4,7 +4,10 @@
 
 	<persistence-unit name="top5unit" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
 		<class>br.org.top5.model.Movie</class>
+		<class>br.org.top5.model.Vote</class>
+		
 		<validation-mode>NONE</validation-mode>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
